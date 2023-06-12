@@ -55,3 +55,6 @@ fastlane/test_output
 
 ## VS Code
 .vscode
+
+# SPM
+.swiftpm

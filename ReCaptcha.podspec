@@ -18,7 +18,7 @@ invisibility is not possible.
   s.social_media_url  = 'https://twitter.com/flavio_caetano'
   s.documentation_url = 'http://fjcaetano.github.io/ReCaptcha'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '12.0'
   s.default_subspecs = 'Core'
 
   s.subspec 'Core' do |core|
@@ -28,11 +28,5 @@ invisibility is not possible.
     core.resource_bundles = {
       'ReCaptcha' => ['ReCaptcha/Assets/**/*']
     }
-  end
-
-  s.subspec 'RxSwift' do |rx|
-    rx.source_files = 'ReCaptcha/Classes/Rx/**/*'
-    rx.dependency 'ReCaptcha/Core'
-    rx.dependency 'RxSwift', '~> 6.0'
   end
 end

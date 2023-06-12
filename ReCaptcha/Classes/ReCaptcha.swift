@@ -56,6 +56,9 @@ public class ReCaptcha {
 
         /// The Bundle that holds ReCaptcha's assets
         private static let bundle: Bundle = {
+            #if SWIFT_PACKAGE
+            return Bundle.module
+            #else
             let bundle = Bundle(for: ReCaptcha.self)
             guard let cocoapodsBundle = bundle
                 .path(forResource: "ReCaptcha", ofType: "bundle")
@@ -64,6 +67,7 @@ public class ReCaptcha {
             }
 
             return cocoapodsBundle
+            #endif
         }()
 
         /**
@@ -175,7 +179,11 @@ public class ReCaptcha {
     public func stop() {
         manager.stop()
     }
-
+    
+    /// Remove webview from superview
+    public func destroy() {
+        manager.destroy()
+    }
 
     /**
      - parameter configure: A closure that receives an instance of `WKWebView` for configuration.
