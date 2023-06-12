@@ -146,6 +146,11 @@ internal class ReCaptchaWebViewManager {
     func stop() {
         webView.stopLoading()
     }
+    
+    func destroy() {
+        stop()
+        webView.removeFromSuperview()
+    }
 
     /**
      Resets the ReCaptcha.

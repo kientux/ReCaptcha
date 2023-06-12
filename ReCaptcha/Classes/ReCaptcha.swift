@@ -179,7 +179,11 @@ public class ReCaptcha {
     public func stop() {
         manager.stop()
     }
-
+    
+    /// Remove webview from superview
+    public func destroy() {
+        manager.destroy()
+    }
 
     /**
      - parameter configure: A closure that receives an instance of `WKWebView` for configuration.
